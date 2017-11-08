@@ -1,0 +1,52 @@
+server:
+  port: 8001
+
+management:
+  security:
+    enabled: false
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:example-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+  h2:
+    console:
+      enabled: true
+      path: console
+      settings:
+        trace: false
+      web-allow-others: false
+
+---
+
+spring:
+  profiles: dev
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5000/eureka
+  instance:
+      preferIpAddress: true
+
+---
+
+spring:
+  profiles: docker
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-registry:5000/eureka
+  instance:
+      preferIpAddress: true
+      #leaseRenewalIntervalInSeconds: 1
+      #leaseExpirationDurationInSeconds: 2
