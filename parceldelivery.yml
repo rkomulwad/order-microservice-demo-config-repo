@@ -1,0 +1,39 @@
+server:
+  port: 8002
+
+management:
+  security:
+    enabled: false
+
+spring:
+  profiles: dev
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:5000/eureka
+    instance:
+        preferIpAddress: true
+  data:
+      cassandra:
+        keyspace-name: package_delivery_kepspace
+        contact-points: localhost
+        schema-action: CREATE_IF_NOT_EXISTS
+        port: 9042
+  profiles: docker
+  data:
+    cassandra:
+      keyspace-name: package_delivery_kepspace
+      contact-points: cassandra
+      schema-action: CREATE_IF_NOT_EXISTS
+      port: 9043
+      auth:
+        username: cassandra
+        password: cassandra
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://service-registry:5000/eureka
+    instance:
+        preferIpAddress: true
+        #leaseRenewalIntervalInSeconds: 1
+        #leaseExpirationDurationInSeconds: 2
