@@ -31,7 +31,7 @@ data:
     keyspace-name: package_delivery_kepspace
     contact-points: cassandra
     schema-action: CREATE_IF_NOT_EXISTS
-    port: 9043
+    port: 9042
     auth:
       username: cassandra
       password: cassandra
