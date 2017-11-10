@@ -9,12 +9,12 @@ management:
 
 spring:
   profiles: dev
-data:
-    cassandra:
-      keyspace-name: package_delivery_kepspace
-      contact-points: test
-      schema-action: CREATE_IF_NOT_EXISTS
-      port: 9045
+  data:
+      cassandra:
+        keyspace-name: package_delivery_kepspace
+        contact-points: test
+        schema-action: CREATE_IF_NOT_EXISTS
+        port: 9045
 eureka:
   client:
     serviceUrl:
@@ -27,15 +27,15 @@ eureka:
 
 spring:
   profiles: docker
-data:
-  cassandra:
-    keyspace-name: package_delivery_kepspace
-    contact-points: cassandra
-    schema-action: CREATE_IF_NOT_EXISTS
-    port: 9042
-    auth:
-      username: cassandra
-      password: cassandra
+  data:
+    cassandra:
+      keyspace-name: package_delivery_kepspace
+      contact-points: cassandra
+      schema-action: CREATE_IF_NOT_EXISTS
+      port: 9042
+      auth:
+        username: cassandra
+        password: cassandra
 eureka:
   client:
     serviceUrl:
