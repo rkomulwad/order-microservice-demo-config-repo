@@ -12,7 +12,7 @@ spring:
   data:
       cassandra:
         keyspace-name: package_delivery_kepspace
-        contact-points: test
+        contact-points: localhost
         schema-action: CREATE_IF_NOT_EXISTS
         port: 9045
 eureka:
