@@ -9,18 +9,19 @@ management:
 
 spring:
   profiles: dev
+  data:
+      cassandra:
+        keyspace-name: package_delivery_kepspace
+        contact-points: localhost
+        schema-action: CREATE_IF_NOT_EXISTS
+        port: 9042
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:5000/eureka
   instance:
       preferIpAddress: true
-data:
-    cassandra:
-      keyspace-name: package_delivery_kepspace
-      contact-points: localhost
-      schema-action: CREATE_IF_NOT_EXISTS
-      port: 9042
+
 
 ---
 
