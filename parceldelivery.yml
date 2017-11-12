@@ -29,7 +29,7 @@ spring:
   profiles: docker
   data:
     cassandra:
-      keyspace-name: package_delivery_kepspace
+      keyspace-name: package_delivery_keyspace
       contact-points: cassandra
       schema-action: CREATE_IF_NOT_EXISTS
       port: 9042
