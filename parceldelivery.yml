@@ -33,9 +33,9 @@ spring:
       contact-points: cassandra
       schema-action: CREATE_IF_NOT_EXISTS
       port: 9042
-      auth:
-        username: cassandra
-        password: cassandra
+      #auth:
+      #  username: cassandra
+      #  password: cassandra
 eureka:
   client:
     serviceUrl:
